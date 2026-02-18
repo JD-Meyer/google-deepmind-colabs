@@ -1,19 +1,30 @@
 ### Set up the virtual environment
-- open terminal
-- for information only
 
-sudo apt update
+#### Option A: Windows (Recommended for PyCharm Community)
+Since PyCharm Community Edition does not support WSL interpreters directly, run the environment natively on Windows.
 
-sudo apt install python3
+1.  **Prerequisites:**
+    - Install [Python 3.10+](https://www.python.org/downloads/) (Ensure "Add to PATH" is checked).
+    - Install [Git for Windows](https://git-scm.com/download/win).
 
-sudo apt install python3-venv
+2.  **Run the Setup Script:**
+    - Double-click `setup_windows.bat` in the project folder.
+    - Or run in terminal:
+      ```cmd
+      setup_windows.bat
+      ```
 
-cd /path-to-project/
+3.  **Configure PyCharm:**
+    - Go to **File > Settings > Project > Python Interpreter**.
+    - Click the gear icon > **Add...**
+    - Select **Existing environment**.
+    - Browse to: `C:\Users\msjen\PycharmProjects\google-deepmind-colabs\.venv\Scripts\python.exe`
 
-python3 -m venv .venv
+#### Option B: WSL / Linux (Advanced)
+If you prefer running in the terminal only or use VS Code.
 
-source .venv/bin/activate
-
-cd .venv/bin
-
-pip install "git+https://github.com/google-deepmind/ai-foundations.git@main"
+1.  **Run the setup script:**
+    ```bash
+    chmod +x setup_wsl.sh
+    ./setup_wsl.sh
+    ```

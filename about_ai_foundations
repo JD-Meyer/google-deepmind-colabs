@@ -1,0 +1,15 @@
+# About the AI Foundations package
+# Google Deep Mind (GDM)
+ai_foundations contains several custom packages specifically designed for GDM training
+attention       # attention mechanisms
+embeddings      # create and query embeddings
+feedback        # testing modules
+generation      #
+machine_learning    #
+ngram           # tokenization and prediction labs
+tokenization    # turns text into tokens
+training        #
+transformers    #
+visualizations      # pyploy, sklib
+
+

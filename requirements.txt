@@ -1,0 +1,5 @@
+pandas
+numpy>=2.0.0
+git+https://github.com/google-deepmind/ai-foundations.git@main
+gemma
+jax
