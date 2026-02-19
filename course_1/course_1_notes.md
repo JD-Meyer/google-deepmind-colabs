@@ -31,4 +31,16 @@ N-grams are limited by
 - reliance on frequency
 - lack of long-range dependencies
 
+**Training**: teaching a model to perform a specific task using a dataset
+
+**Parameters**: The outputs of a training process
+- the parameters of an n-gram model are conditional probabilities
+- the parameters of a xformer model are a (much larger) collection of numbers
+
+**Greedy sampling**: The practice of always choosing the token with the highest probability.
+
+**Stochastic**: random (usually meaning as opposed to deterministic/fixed)
+
+
+
 
