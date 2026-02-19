@@ -33,7 +33,7 @@ N-grams are limited by
 
 **Training**: teaching a model to perform a specific task using a dataset
 
-**Parameters**: The outputs of a training process
+**Parameters**: The outputs of a training process (not the output of the application)
 - the parameters of an n-gram model are conditional probabilities
 - the parameters of a xformer model are a (much larger) collection of numbers
 
@@ -41,6 +41,27 @@ N-grams are limited by
 
 **Stochastic**: random (usually meaning as opposed to deterministic/fixed)
 
+**Inference**: Using a machine learning model to make predictions.
+
+**The Training Process**
+a.k.a. *Optimization*
+1. Predict the target based on the input
+2. Compare the prediction to the target
+3. Adjust the parameters
+
+**Loss**: The difference between the target and the actual prediction.
+a.k.a wrongness
+high loss=large difference
+decreasing loss->model is improving
+
+**Preprocessing**: Cleaning & prepping data for model training.
+
+**Fine-tuning**: Adpats a model to a specific task/behavior
+
+**SFT**: Supervised Fine-Tuning
+
+**RLHF**: Reinforcement Learning from Human Feedback
+Aligns the AI's behavior with human preferences.
 
 
 

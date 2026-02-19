@@ -17,9 +17,10 @@ and I must follow through until finished, or it becomes clear that following thr
 
 
 1. Personal value: Proceduralism
-2. Based on Western philosophy
+2. Based on a mix of Western philosophy and Ubuntu
 3. Use standardized processes to ensure repeatability, reportability, and scalability.
-4. This should be the central tenet of software development. If you can repeat it, you can fix it.
+4. This should be the central tenet of software development. If you can repeat it, you can fix it. 
+If you plan to make it repeatable, reportable, and scalable, you can avoid having to fix it.
 5. If you plan for long-term sustainability, you'll be less likely to mess it up the first time.
 
 
