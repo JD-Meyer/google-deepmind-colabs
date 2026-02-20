@@ -116,8 +116,12 @@ Use create_model() to build a transformer model.
 **Callback function**: Prints a sample output on a regular basis during training so loss can be measured.
 
 ## Train the Model!
-**Step**: The training process updates the model parameter after processing each batch. Processing & updating is a single step.
-**Epoch**: Processing all batches in the dataset. Run multiple epochs to improve accuracy.
-**Overfitting**: When you run too many epochs and the model starts picking up noise.
+- **Step**: The training process updates the model parameter after processing each batch. Processing & updating is a single step.
+- **Epoch**: Processing all batches in the dataset. Run multiple epochs to improve accuracy.
+- **Overfitting**: When you run too many epochs and the model starts picking up noise.
 
+### Evaluation
+- A. How good is your model at predicting the next token for a given prompt based on patterns identified in the training dataset?
+- B. Is the generated text coherent, and does it make sense given the context?
+- C. Is the likely next token what you expect to see when the context is changed slightly?
 
