@@ -125,3 +125,4 @@ Use create_model() to build a transformer model.
 - B. Is the generated text coherent, and does it make sense given the context?
 - C. Is the likely next token what you expect to see when the context is changed slightly?
 
+**Test set**: Curated collection of prompts and outputs. Allows the user to automate metrics.
