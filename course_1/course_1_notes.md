@@ -15,22 +15,30 @@
 
 ## N-grams
 **N-gram**: A continuous sequence of $n$ words.
-> Unigram n=1
-> Bigram  n=2
-> Trigram n=3
+- Unigram n=1
+- Bigram  n=2
+- Trigram n=3
 
 **Context**: The preceding sequence of $n-1$ words.
 
-**How are n-grams related to the context?** N-gram models use n-grams to estimate the probability of the next word based on the context.
-
-**Text Corpus**: A dataset consisting of a collection of texts
+**How are n-grams related to the context?**
+>    N-gram models use n-grams to estimate the probability of the next word based on the context.
 
 N-grams are limited by
 - the size of the dataset
 - items omitted from dataset
 - reliance on frequency
 - lack of long-range dependencies
+- 
+**The Training Process**,     a.k.a. *Optimization*
+1. Predict the target based on the input
+2. Compare the prediction to the target
+3. Adjust the parameters
 
+* The input to deep learning models is a matrix where each row corresponds to the data for one example in the dataset.
+
+
+## Glossary
 **Training**: teaching a model to perform a specific task using a dataset
 
 **Parameters**: The outputs of a training process (not the output of the application)
@@ -43,16 +51,10 @@ N-grams are limited by
 
 **Inference**: Using a machine learning model to make predictions.
 
-**The Training Process**
-a.k.a. *Optimization*
-1. Predict the target based on the input
-2. Compare the prediction to the target
-3. Adjust the parameters
-
 **Loss**: The difference between the target and the actual prediction.
-a.k.a wrongness
-high loss=large difference
-decreasing loss->model is improving
+- a.k.a wrongness
+- high loss=large difference
+- decreasing loss->model is improving
 
 **Preprocessing**: Cleaning & prepping data for model training.
 
@@ -61,9 +63,9 @@ decreasing loss->model is improving
 **SFT**: Supervised Fine-Tuning
 
 **RLHF**: Reinforcement Learning from Human Feedback
-Aligns the AI's behavior with human preferences.
+- Aligns the AI's behavior with human preferences.
 
-* The input to deep learning models is a matrix where each row corresponds to the data for one example in the dataset.
+**Test set**: Curated collection of prompts and outputs. Allows the user to automate metrics.
 
 ## Training Your SLM (1_5)
 
@@ -125,4 +127,3 @@ Use create_model() to build a transformer model.
 - B. Is the generated text coherent, and does it make sense given the context?
 - C. Is the likely next token what you expect to see when the context is changed slightly?
 
-**Test set**: Curated collection of prompts and outputs. Allows the user to automate metrics.
