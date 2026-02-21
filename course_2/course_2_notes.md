@@ -16,21 +16,23 @@
 * Why do we clean data?
   * To reduce noise while retaining important information
 
-
-
-
 ## Glossary
 **BPE**: Byte-Pair Encoding
 
-**Code point**: The unique ID number for each unicode character.
+**Code point**: The unique ID number for each Unicode character.
 
-**Zipf's Law**:
+**Zipf's Law**: A very small number of tokens (like "the", "a", "and") are extremely common, while the vast majority are rare, often appearing only once. 
+This creates a "long tail" distribution.
+
+**log-log plot**: Solves the problem of the long tail when plotting distribution frequency.
+- Plots the logarithm of the rank against the logarithm of the frequency.
 
 **Special Tokens**
 - <BOS>: Beginning of Sentence
 - <EOS>: End of Sentence
 - <PAD>: Padding
 - <UNK>: Unknkown
+- </w>: end of word
 
 **High-resource languages**: Languages which have a large corpus of digitized text available to train LMs on.
 
@@ -41,6 +43,15 @@
 **OOV**: The out-of-vocabulary problem occurs when a model encounters a word not in its vocabulary.
 
 **Subword tokenization**: Optimizes the balance between word-sized and character-sized tokens.
+
+## The BPE Algorithm
+
+1. **Initialize**: Split the dataset into individual characters. Initialize the vocabulary with the set of unique characters. Replaces spaces with `</w>`).
+2. **Count**: Count how often each pair of tokens appears in the corpus.
+3. **Merge**: Choose the most frequently appearing adjacent pair of tokens `(p, q)`. Add a new merged token `pq` to the vocabulary.
+4. **Replace**: Replace all adjacent pairs of tokens `(p, q)` with the new token `pq` in the corpus.
+5. **Repeat**: steps 2-4 until you reach the target vocabulary size.
+
 
 
 
