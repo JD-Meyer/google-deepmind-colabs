@@ -32,6 +32,17 @@
 - <PAD>: Padding
 - <UNK>: Unknkown
 
+**High-resource languages**: Languages which have a large corpus of digitized text available to train LMs on.
+
+**Low-resource languages**: Have a smaller digital footprint. Low-resource languages are generally under-represented.
+
+**data coloniality**: The risk of digital data being extracted in a way that mirrors historical practices.
+
+**OOV**: The out-of-vocabulary problem occurs when a model encounters a word not in its vocabulary.
+
+**Subword tokenization**: Optimizes the balance between word-sized and character-sized tokens.
+
+
 
 
 -----
