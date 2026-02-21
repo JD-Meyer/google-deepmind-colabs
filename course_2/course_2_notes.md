@@ -44,6 +44,37 @@ This creates a "long tail" distribution.
 
 **Subword tokenization**: Optimizes the balance between word-sized and character-sized tokens.
 
+**Token embedding**: a list of floating-point numbers that represents a token. Each token gets its own unique coordinate in a high-dimensional space.
+
+**Semantic neighborhoods**: where related concepts cluster
+
+**Cosine similarity**: measures the angle between two vectors and gives a score between -1 and 1.
+- A score of 1 means the vectors point in the exact same direction (perfectly similar).
+- A score of 0 means the vectors are at a 90-degree angle (unrelated).
+- A score of -1 means they point in opposite directions (opposites).
+
+**Sparse representation**: Many dimensions are zero for a given word, e.g. the "fruitiness" of the word "internet" is zero.
+
+**Dense embeddings**: almost every number in a word's vector is a non-zero value, and each dimension contributes a small part to its overall meaning.
+- Instead of having neat, human-defined axes, the model discovers the most statistically useful directions on its own.
+
+**Distributional hypothesis**: the meaning of a word is defined by the words that appear around it
+- Summarized as: "You shall know a word by the company it keeps" 
+
+**PCA**: Principal Component Analysis
+
+**Dot Product**: indicates the similarity of two embeddings.
+- Negative dot product: when $\mathbf{u}^T \mathbf{v} < 0$, the angle between them is greater than 90 degrees. The two vectors are pointing in opposite directions and this indicates a high level of dissimilarity.
+- Zero dot product: when $\mathbf{u}^T \mathbf{v} = 0$, they are orthogonal and the angle between them is 90 degrees. Usually the embeddings are unrelated.
+- Positive dot product: when $\mathbf{u}^T \mathbf{v} > 0$, the angle between them is less than 90 degrees. The vectors are pointing in a similar direction, meaning the embeddings are similar.
+
+**Cosine Similarity**:  Normalizes the similarities between two vector embeddings to make them less dependent on the specific values and the number of dimensions.
+
+**t-SNE**: A visualization method that **preserves the pairwise similarities** between data points in a lower-dimensional space.
+
+
+
+
 ## The BPE Algorithm
 
 1. **Initialize**: Split the dataset into individual characters. Initialize the vocabulary with the set of unique characters. Replaces spaces with `</w>`).
@@ -51,9 +82,6 @@ This creates a "long tail" distribution.
 3. **Merge**: Choose the most frequently appearing adjacent pair of tokens `(p, q)`. Add a new merged token `pq` to the vocabulary.
 4. **Replace**: Replace all adjacent pairs of tokens `(p, q)` with the new token `pq` in the corpus.
 5. **Repeat**: steps 2-4 until you reach the target vocabulary size.
-
-
-
 
 
 -----
