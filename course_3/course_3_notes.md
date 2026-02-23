@@ -35,21 +35,74 @@ High-bias models are too rigid and fail to capture the intended, underlying patt
 **Classification**: Predicting the most likely class (or probability distribution over classes) for a given data point. 
 - In the context of language models, the most common classification task is the prediction of the next token from a prompt.
 
-**Regression**: Predicting a number for a data point. For example, predicting the future air temperature from data such as atmospheric pressure, wind speed, and time of year.
+**Decision boundary**: The line separating the classes of a dataset.
+
+**Linearly-separable dataset**: the classes in the dataset can be separated by a straight line
+
+**Non-linearly-separable dataset**: the classes in the dataset can not be separated by a straight line
 
 **ReLU**: (Rectified Linear Unit)
-It outputs the input value if it's positive, and 0 otherwise.
+- Outputs the input value if it's positive, and 0 otherwise.
+- Creates a kink in a decision boundary
 
 **Sigmoid**: A function that outputs values between 0 and 1. 
 - If (**z**) is less than 0, the sigmoid function outputs a value between 0 and 0.5.
 - If (**z**) is greater than 0, this function outputs a value between 0.5 and 1. 
 - Useful for the output layer of binary classification models since its output can be interpreted as the probability of one of the two classes.
+- Curves the  decision boundary 
 
 **SoftMax**: Designed for tasks with many possible classes. 
 - In language models, it produces a probability distribution over the entire vocabulary. 
 - This gives the likelihood of each possible token being the next one. 
 - In this case, the output consists of multiple neurons, one for each class. This means that instead of having only one value **z**,
 there is a separate value **z(i)** for each class indexed by **i**.
+
+- Multiple hidden layers lead to more complex decision boundaries because each layer is able to adjust the output of the layer before it.
+
+**Regression**: Predicting a number for a data point. For example, predicting the future air temperature from data such as atmospheric pressure, wind speed, and time of year.
+
+**Hyperparameters**: The settings that are configured before a model begins training
+    - Number of layers 
+    - Number of neurons per layer (dimensions)
+    - Number of epochs
+
+**Capacity**: ability to learn complex patterns
+- Increases linearly with layers and neurons
+
+**Weight Decay**: forces the model to learn simpler weights.
+- a.k.a. **L2 Regularization**
+- adds a penalty term to the model's loss function based on the size of its weights
+- small weights = small parameters = less noise
+
+**Dropout**: randomly *drops* neurons by making their output 0. (Does not actually remove neurons.)
+- Forces the network to learn more robust features since it cannot depend on any single neuron always being active
+- Prevents complex co-adaptations where neurons rely on specific other neurons.
+- Applied ONLY during training (which makes sense).
+
+**Checkpointing**: saving the model’s parameters at different times during training.
+- taking a snapshot
+- Allows model to check for previous epochs with better performance. If performance degrades, the model stops training.
+
+**Early Stopping**: Stops training once the model’s performance on a validation dataset stops improving.
+- See *Checkpointing* above.
+
+**Patience**: The number of epochs. 
+- This probably refers to the human's patience rather than the machine's.
+
+**Validation sets**: A third dataset, analogous to the final exam.
+
+    - The training dataset 
+      - usually 70%-80% of data points
+      - used for training the model parameters
+    
+    The validation dataset
+      - usually 10-15% of data points
+      - used to tune hyperparameters (like how much dropout to apply) and to decide when to stop training the model.
+    
+    The test set 
+      - usually 10-20% of data points
+      - used only after all training is complete 
+
 
 
 
@@ -80,3 +133,6 @@ Solution:
 1. Increase the size of thr training dataset.
 2. Increase the amount of specific data regarding men's jackets.
 3. Stock men's jackets made out of things other than wool.
+
+
+### Evaluate Model and System for safety
