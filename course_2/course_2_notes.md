@@ -73,8 +73,6 @@ This creates a "long tail" distribution.
 **t-SNE**: A visualization method that **preserves the pairwise similarities** between data points in a lower-dimensional space.
 
 
-
-
 ## The BPE Algorithm
 
 1. **Initialize**: Split the dataset into individual characters. Initialize the vocabulary with the set of unique characters. Replaces spaces with `</w>`).
