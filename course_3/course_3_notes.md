@@ -30,7 +30,7 @@ High-bias models are too rigid and fail to capture the intended, underlying patt
 **Artificial neuron**: fundamental component of the multi-layer perceptron
 
 **MLP**: multi-layer perceptron
-- Used for regreaasion and classification tasks
+- Used for regression and classification tasks
 
 **Classification**: Predicting the most likely class (or probability distribution over classes) for a given data point. 
 - In the context of language models, the most common classification task is the prediction of the next token from a prompt.
@@ -103,6 +103,7 @@ there is a separate value **z(i)** for each class indexed by **i**.
       - usually 10-20% of data points
       - used only after all training is complete 
 
+**Gradient Descent**: Automatically updating a model's parameters to improve performance on training data.
 
 
 
