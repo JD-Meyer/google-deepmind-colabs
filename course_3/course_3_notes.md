@@ -1,15 +1,49 @@
-# Signal and noise
-Why machines sometimes learn undesirable patterns.
+# Course Goals
+1. Understand the concept of generalization and its importance in making a model perform well on unseen data.
+2. Recognize the limitations of training loss as the only metric for judging model quality.
+3. Explain why good performance on training data does not guarantee real-world accuracy.
+4. Explain how overfitting and underfitting impact model performance.
+5. Describe how generalization and train-test splits can help to overcome overfitting and underfitting.
+6. Interpret loss curves and the bias-variance trade-off. 
+7. Explain how they reflect model behavior during training and testing.
+8. Design and evaluate multilayer perceptrons (MLPs) to solve simple classification tasks.
+9. Describe the way model complexity, including layers and units, influences generalization.
+10. Explain how hyperparameter tuning, such as the number of layers or hidden units, has an impact on training loss versus test performance.
+11. Experiment with overfitting mitigation techniques such as regularization, dropout, early stopping, and model capacity control.
+12. Describe the role of a validation dataset. 
+13. Explain why hyperparameter tuning should be performed on validation data rather than test data. 
+14. Summarize the role of backpropagation in the process of training a neural network. 
+15. Explain gradient-based optimization using the stochastic gradient descent (SGD) algorithm. 
+16. Train a neural network. 
+17. Consider the anticipated benefits and risks of AI models and how these can be addressed within your local region.
+
+## Definitions
+
+**Generalization**: The model's ability to apply what it learned from the training data to make accurate predictions on new, unseen data.
 
 **Signal**: The intended, underlying pattern the model should learn. The information that generalizes to new situations.
 
 **Noise**: Coincidental patterns or artifacts specific to the training data but not representing a general rule.
 
-**MLP**: multilayer perceptron
+**Artificial neuron**: fundamental component of the multi-layer perceptron
 
-**SGD**: stochastic gradient descent
+**MLP**: multi-layer perceptron
+- Used for regression and classification tasks
+- aka Neural Net
 
-**Generalization**: The model's ability to apply what it learned from the training data to make accurate predictions on new, unseen data.
+**Classification**: Predicting the most likely class (or probability distribution over classes) for a given data point. 
+- In the context of language models, the most common classification task is the prediction of the next token from a prompt.
+
+**Regression**: Predicting a number for a data point. For example, predicting the future air temperature from data such as atmospheric pressure, wind speed, and time of year.
+
+**Capacity**: ability to learn complex patterns
+- Increases linearly with layers and neurons
+
+**Gradient Descent**: Automatically updating a model's parameters to improve performance on training data.
+- The gradient is a partial derivative.
+
+**SGD**: stochastic gradient descent. 
+- Gradient descent with a randomness factor thrown in.
 
 **Bias**: Error introduced by oversimplification (underfitting).
 High-bias models are too rigid and fail to capture the intended, underlying patterns in the data. They ignore the signal.
@@ -20,20 +54,15 @@ High-bias models are too rigid and fail to capture the intended, underlying patt
 - The model has too few parameters
 - It cannot capture certain patterns because they are too complex.
 
+**Overfitting**: An overfit model fails to generalize.
+- It picks up undesirable patterns in the noise.
+
 **Variance**: The error of over-sensitivity
 - a.k.a overfitting
 - High-variance models pay too much attention to the noise
 - The model performs exceptionally well in situations that are very similar as the ones in the training data but fails in new situations
 
 **Loss curves**: Plot the training loss and the test loss as a function of the epochs.
-
-**Artificial neuron**: fundamental component of the multi-layer perceptron
-
-**MLP**: multi-layer perceptron
-- Used for regression and classification tasks
-
-**Classification**: Predicting the most likely class (or probability distribution over classes) for a given data point. 
-- In the context of language models, the most common classification task is the prediction of the next token from a prompt.
 
 **Decision boundary**: The line separating the classes of a dataset.
 
@@ -57,17 +86,12 @@ High-bias models are too rigid and fail to capture the intended, underlying patt
 - In this case, the output consists of multiple neurons, one for each class. This means that instead of having only one value **z**,
 there is a separate value **z(i)** for each class indexed by **i**.
 
-- Multiple hidden layers lead to more complex decision boundaries because each layer is able to adjust the output of the layer before it.
-
-**Regression**: Predicting a number for a data point. For example, predicting the future air temperature from data such as atmospheric pressure, wind speed, and time of year.
+*Multiple hidden layers lead to more complex decision boundaries because each layer is able to adjust the output of the layer before it.*
 
 **Hyperparameters**: The settings that are configured before a model begins training
     - Number of layers 
     - Number of neurons per layer (dimensions)
     - Number of epochs
-
-**Capacity**: ability to learn complex patterns
-- Increases linearly with layers and neurons
 
 **Weight Decay**: forces the model to learn simpler weights.
 - a.k.a. **L2 Regularization**
@@ -103,29 +127,12 @@ there is a separate value **z(i)** for each class indexed by **i**.
       - usually 10-20% of data points
       - used only after all training is complete 
 
-**Gradient Descent**: Automatically updating a model's parameters to improve performance on training data.
 
+**Backpropagation**: the core algorithm that enables deep neural networks to learn from data.
+- SGD updates the model, gradually improving predictions; however, it only works if there's a programmatic way to update every parameter repeatedly, because the math gets too complex.
 
-
-
-## Course Goals
-1. Understand the concept of generalization and its importance in making a model perform well on unseen data.
-2. Recognize the limitations of training loss as the only metric for judging model quality and explain why good performance on training data does not guarantee real-world accuracy.
-3. Explain how overfitting and underfitting impact model performance.
-4. Describe how generalization and train-test splits can help to overcome this.
-5. Interpret loss curves and the bias-variance trade-off and explain how they reflect model behavior during training and testing.
-6. Design and evaluate multilayer perceptrons (MLPs) to solve simple classification tasks and describe the way model complexity, including layers and units, influences generalization.
-7. Explain how hyperparameter tuning, such as the number of layers or hidden units, has an impact on training loss versus test performance.
-8. Experiment with overfitting mitigation techniques such as regularization, dropout, early stopping, and model capacity control.
-9. Describe the role of a validation dataset
-10. Explain why hyperparameter tuning should be performed on validation data rather than test data.
-11. Summarize the role of backpropagation in the process of training a neural network.
-12. Explain gradient-based optimization using the stochastic gradient descent (SGD) algorithm.
-13. Train a neural network.
-14. Consider the anticipated benefits and risks of AI models and how these can be addressed within your local region.
-
-
-
+**Forward pass**: the network takes an input and generates an output during training.
+- Each neuron in each layer computes a weighted sum of the outputs (also known as activations) from the previous layer, adds a bias, and then applies a non-linear activation function
 
 #### Problem: Noor's chatbot is producing irrelevant data related to Men's jackets.
 Task: Design a plan to ensure the model generalizes better.
@@ -134,6 +141,3 @@ Solution:
 1. Increase the size of thr training dataset.
 2. Increase the amount of specific data regarding men's jackets.
 3. Stock men's jackets made out of things other than wool.
-
-
-### Evaluate Model and System for safety
