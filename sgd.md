@@ -1,8 +1,8 @@
 # Stochastic Gradient Descent (SGD)
 
 **Batch gradient descent**: calculating the gradient descent based on all examples at once.
-It works well for small datasets & small models; however,
-It is computationally expensive, using large amounts of RAM.
+- It works well for small datasets & small models; however,
+- It is computationally expensive, using large amounts of RAM.
 
 
 **SGD**: approximates the true gradient using small, random samples of data.
