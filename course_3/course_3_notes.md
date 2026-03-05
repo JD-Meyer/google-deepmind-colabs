@@ -20,16 +20,19 @@
 ## Definitions
 
 **Generalization**: The model's ability to apply what it learned from the training data to make accurate predictions on new, unseen data.
+- Indicates that the model is not performing rote memorization.
 
-**Signal**: The intended, underlying pattern the model should learn. The information that generalizes to new situations.
+**Signal**: The intended, underlying pattern the researcher intend that the model should learn. 
+- The information that generalizes to new situations.
+- The signal is highly dependent on the quality of the data and the planning that goes into training.
 
 **Noise**: Coincidental patterns or artifacts specific to the training data but not representing a general rule.
 
-**Artificial neuron**: fundamental component of the multi-layer perceptron
+**Artificial neuron**: Fundamental component of the multi-layer perceptron.
 
 **MLP**: multi-layer perceptron
-- Used for regression and classification tasks
-- aka Neural Net
+- Used for regression and classification tasks.
+- aka Neural Net (NN)
 
 **Classification**: Predicting the most likely class (or probability distribution over classes) for a given data point. 
 - In the context of language models, the most common classification task is the prediction of the next token from a prompt.
@@ -40,51 +43,65 @@
 - Increases linearly with layers and neurons
 
 **Gradient Descent**: Automatically updating a model's parameters to improve performance on training data.
-- The gradient is a partial derivative.
+- The gradient is a partial derivative computed over the entire dataset.
+- Very memory-intensive.
 
 **SGD**: stochastic gradient descent. 
 - Gradient descent with a randomness factor thrown in.
+- Speeds up the calculation of gradient weights by acting on a small, random subset of data at each iteration
 
 **Bias**: Error introduced by oversimplification (underfitting).
-High-bias models are too rigid and fail to capture the intended, underlying patterns in the data. They ignore the signal.
+- High-bias models are too rigid and fail to capture the intended, underlying patterns in the data. They ignore the signal.
+- *Bias as a term* is a variable added to weighted sum of inputs before applying the activation function.
+  - Bias shifts the activation function independently of its outputs.
 
 **Underfitting**: An underfit model performs poorly both on situations in the training data, and on new situations. 
 - The model may not have been trained on sufficient amounts of data. 
 - It may not have been trained for long enough.
-- The model has too few parameters
+- The model has too few parameters.
 - It cannot capture certain patterns because they are too complex.
 
 **Overfitting**: An overfit model fails to generalize.
-- It picks up undesirable patterns in the noise.
+- It picks up undesirable patterns in the noise and performs as if it is answering from rote memory rather than learning patterns.
 
-**Variance**: The error of over-sensitivity
+**Variance**: The error of over-sensitivity.
 - a.k.a overfitting
-- High-variance models pay too much attention to the noise
-- The model performs exceptionally well in situations that are very similar as the ones in the training data but fails in new situations
+- High-variance models pay too much attention to the noise.
+- The model performs exceptionally well in situations that are very similar as the ones in the training data but fails in new situations.
+
+**Learning rate**: Determines step size at each iteration while weifghts are updated during optimization.
 
 **Loss curves**: Plot the training loss and the test loss as a function of the epochs.
 
-**Decision boundary**: The line separating the classes of a dataset.
+**Decision boundary**: Theoretical boundary separating classes in a classification problem.
+- NNs learn this boundary implicitly.
+- It frequently appears as lines or curves on data visualizations.
 
-**Linearly-separable dataset**: the classes in the dataset can be separated by a straight line
+**Linearly-separable dataset**: the classes in the dataset can be separated by a straight line.
 
-**Non-linearly-separable dataset**: the classes in the dataset can not be separated by a straight line
+**Non-linearly-separable dataset**: the classes in the dataset can *not* be separated by a straight line.
 
-**ReLU**: (Rectified Linear Unit)
-- Outputs the input value if it's positive, and 0 otherwise.
-- Creates a kink in a decision boundary
+**Weights**: numerical parameters representing the strength of connections between neurons.
+- Iteratively adjusted during the learning process.
 
-**Sigmoid**: A function that outputs values between 0 and 1. 
-- If (**z**) is less than 0, the sigmoid function outputs a value between 0 and 0.5.
-- If (**z**) is greater than 0, this function outputs a value between 0.5 and 1. 
-- Useful for the output layer of binary classification models since its output can be interpreted as the probability of one of the two classes.
-- Curves the  decision boundary 
+**Activation function**:  Introduces non-linearity into a neural network training.
+- Enables NN to learn and model complex relationships and make sophisticated decisions from data.
 
-**SoftMax**: Designed for tasks with many possible classes. 
-- In language models, it produces a probability distribution over the entire vocabulary. 
-- This gives the likelihood of each possible token being the next one. 
-- In this case, the output consists of multiple neurons, one for each class. This means that instead of having only one value **z**,
-there is a separate value **z(i)** for each class indexed by **i**.
+    **ReLU**: (Rectified Linear Unit)
+    - Outputs the input value if it's positive, and 0 otherwise.
+    - Creates a kink in a decision boundary
+    
+    **Sigmoid**: A function that outputs values between 0 and 1. 
+    - If $\mathbf{(z)}$ is less than 0, the sigmoid function outputs a value between 0 and 0.5.
+    - If $\mathbf{(z)}$ is greater than 0, this function outputs a value between 0.5 and 1. 
+    - Useful for the output layer of binary classification models since its output can be interpreted as the probability of one of the two classes.
+    - Curves the  decision boundary 
+    
+    **SoftMax**: Designed for tasks with many possible classes. 
+    - In language models, it produces a probability distribution over the entire vocabulary. 
+    - This gives the likelihood of each possible token being the next one. 
+    - In this case, the output consists of multiple neurons, one for each class. This means that instead of having only one value **z**,
+    - there is a separate value $\mathbf{(z)}$ for each class indexed by $\mathbf{(i)}$.
 
 *Multiple hidden layers lead to more complex decision boundaries because each layer is able to adjust the output of the layer before it.*
 
@@ -113,7 +130,7 @@ there is a separate value **z(i)** for each class indexed by **i**.
 **Patience**: The number of epochs. 
 - This probably refers to the human's patience rather than the machine's.
 
-**Validation sets**: A third dataset, analogous to the final exam.
+**Train-test split**: Dividing the data into multiple subsets used to train, measure, and test learning progress.
 
     - The training dataset 
       - usually 70%-80% of data points

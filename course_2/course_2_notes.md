@@ -1,10 +1,11 @@
 # Represent Your Language Data
 
 ## Course Objectives
-- Explain the nuances and complexities of language data with regard to tokenization.
-- Relate the token distribution in your dataset to Zipf’s law, describing the relationship between the frequency and the rank of a token.
-- Discuss the trade-off between vocabulary size, model size and computational efficiency.   
-- Explain the different types of tokenization methods (e.g. character, word, subword) and analyze their effects on vocabulary size and sequence length.
+- Explain the nuances and complexities of language data wrt tokenization.
+- Relate the token distribution in a dataset to Zipf’s law, describing the relationship between a token's frequency and rank.
+- Examine the trade-off between vocabulary size, model size and computational efficiency.   
+- Explain the different types of tokenization methods (e.g. character, word, subword). 
+- Analyze their effects on vocabulary size and sequence length.
 - Explain the role of special tokens (such as <BOS>, <EOS>, <PAD>, <UNK>) in model vocabulary.  
 - Describe the byte-pair encoding (BPE) algorithm and apply it to a text dataset. 
 - Recognize how embeddings capture the meaning of tokens.
@@ -49,9 +50,9 @@ This creates a "long tail" distribution.
 **Semantic neighborhoods**: where related concepts cluster
 
 **Cosine similarity**: measures the angle between two vectors and gives a score between -1 and 1.
-- A score of 1 means the vectors point in the exact same direction (perfectly similar).
-- A score of 0 means the vectors are at a 90-degree angle (unrelated).
-- A score of -1 means they point in opposite directions (opposites).
+- 1 means the vectors point in the exact same direction (perfectly similar).
+- 0 means the vectors are at a 90-degree angle (unrelated).
+- -1 means they point in opposite directions (opposites).
 
 **Sparse representation**: Many dimensions are zero for a given word, e.g. the "fruitiness" of the word "internet" is zero.
 
@@ -59,7 +60,7 @@ This creates a "long tail" distribution.
 - Instead of having neat, human-defined axes, the model discovers the most statistically useful directions on its own.
 
 **Distributional hypothesis**: the meaning of a word is defined by the words that appear around it
-- Summarized as: "You shall know a word by the company it keeps" 
+- Summarized as: "You shall know a word by the company it keeps."
 
 **PCA**: Principal Component Analysis
 
@@ -72,9 +73,7 @@ This creates a "long tail" distribution.
 
 **t-SNE**: A visualization method that **preserves the pairwise similarities** between data points in a lower-dimensional space.
 
-
 ## The BPE Algorithm
-
 1. **Initialize**: Split the dataset into individual characters. Initialize the vocabulary with the set of unique characters. Replaces spaces with `</w>`).
 2. **Count**: Count how often each pair of tokens appears in the corpus.
 3. **Merge**: Choose the most frequently appearing adjacent pair of tokens `(p, q)`. Add a new merged token `pq` to the vocabulary.

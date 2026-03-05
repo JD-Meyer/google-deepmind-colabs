@@ -1,16 +1,18 @@
 # Case study: RobotsMali - Using AI to tackle illiteracy in Mali
 
 1. Choose three sectors that LLMs could support from the following list
-Law
-Languages
-Education
+- Law
+- Languages
+- Education
 
 ## Law
 Laws are applied unequally, resulting in penalizing the poor and destitute, while allowing the wealthy and powerful to avoid consequences.
 LLMs could improve the current legal system by
 - Eliminating bias based on race, sex, and appearance
 - Eliminating bias based on education, speech, and disability
-- Performing evidence analysis independently from testimony
+- Performing evidence analysis independent of testimony
+- Applying the law without requiring an in-person appearance at a courthouse. 
+(The working poor cannot afford to lose income when waiting at a courthouse. This doubly penalizes the poor.)
 - Using a wider selection of laws and legal precedent than any group of humans has the ability to access or retain.
 
 ## Languages

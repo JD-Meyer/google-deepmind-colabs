@@ -6,10 +6,8 @@ An ethical dilemma that forces the user to choose:
 Do you **accept responsibility** for the death of a single person
 OR **Deny** responsibility for the deaths of 5 people?
 
-*Hypothetically*, most people would accept responsibility for the death of 1 person.
-This is an application of doing the least harm.
+*Hypothetically*, most people would accept responsibility for the death of 1 person aas an application of doing the least harm.
 
-*In reality*, most people would probably do nothing rather than accept responsibility.
-This is a function of personal risk-avoidance.
+*In reality*, most people would probably do nothing rather than accept responsibility, as a function of personal risk-avoidance.
 
-*Afterward*, they would rationalize their decision to do nothing.
+Tey would later rationalize their decision to do nothing.

@@ -7,13 +7,13 @@ A good problem statement is essential for guiding the research process and inclu
 - Justify the need for the research. 
 
 The gap between teaching and learning causes many children to become marginalized adults.
-Critics of our education system complain that students become disinterested because the material is
+Critics of our education system complain that students become disinterested because the material is:
 1. Irrelevant to the student's needs
 2. Poorly presented
 3. Inappropriate for students with disabilities
 4. Prioritizes metrics over learning
 
-What students need is a curriculum that
+What students need is a curriculum that:
 - Focuses on real-world problems
 - Is presented in a realistic way
 - Holds their attention
@@ -23,16 +23,18 @@ For example, the game of basketball is widely taught in physical education class
 Although most children will not play the game regularly as adults, many children play for entertainment.
 Some children turn the game into lucrative careers. The rest move on to other pursuits.
 
-Video games are a huge industry that mostly succeeds in wasting a lot of time; however, some of them inadvertently teach real-world skills.
+Video games are a huge industry that mostly succeeds in wasting a lot of time; 
+however, some of them inadvertently teach real-world skills.
 Assassin's Creed is an example of a game that inadvertently teaches history.
-By immersing the player in a three-dimensional world, the game inadvertently teaches
+By immersing the player in a three-dimensional world, the game inadvertently teaches:
 - Geography
 - Religion
 - Economics
 - Social norms
 - Politics
 
-There are ample opportunities to expand on any of the above by replacing the game mechanic of assassination with other tasks.
+There are ample opportunities to expand on any of the above by replacing the 
+game mechanic of assassination with other tasks.
 Large language models can further tailor any of the above topics to match a student's pace and interests.
 
 * For example: Politics through the lens of fashion.
@@ -76,4 +78,6 @@ The farthingale is especially important. It created a literal radius of power ar
 Her body became a fortress.
 
 
-
+### How can this be adapted into an adventure that students would enjoy?
+- Solving mysteries by observing the color and decorations on clothing?
+- Creating messages using symbolism?

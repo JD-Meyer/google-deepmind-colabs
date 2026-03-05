@@ -4,8 +4,8 @@
 - foundation of modern LLMs
 
 **Language Modeling**
-- Languages follow rules, like syntax and grammar
-- If you can teach a machine the rules for spoken language, it can learn the rules for similar pattern-modeling systems
+- Languages follow rules, like syntax and grammar.
+- If you can teach a machine the rules for spoken language, it can learn the rules for similar pattern-modeling systems.
   - Climate modeling
   - Protein folding
   - Writing music
@@ -22,7 +22,7 @@
 **Context**: The preceding sequence of $n-1$ words.
 
 **How are n-grams related to the context?**
->    N-gram models use n-grams to estimate the probability of the next word based on the context.
+- N-gram models use n-grams to estimate the probability of the next word based on the context.
 
 N-grams are limited by
 - the size of the dataset
@@ -30,7 +30,7 @@ N-grams are limited by
 - reliance on frequency
 - lack of long-range dependencies
 - 
-**The Training Process**,     a.k.a. *Optimization*
+**The Training Process**: a.k.a. *Optimization*
 1. Predict the target based on the input
 2. Compare the prediction to the target
 3. Adjust the parameters
@@ -39,11 +39,11 @@ N-grams are limited by
 
 
 ## Glossary
-**Training**: teaching a model to perform a specific task using a dataset
+**Training**: teaching a model to perform a specific task using a dataset.
 
-**Parameters**: The outputs of a training process (not the output of the application)
-- the parameters of an n-gram model are conditional probabilities
-- the parameters of a xformer model are a (much larger) collection of numbers
+**Parameters**: The outputs of a training process (not the output of the application).
+- The parameters of an n-gram model are conditional probabilities.
+- The parameters of a xformer model are a (much larger) collection of numbers.
 
 **Greedy sampling**: The practice of always choosing the token with the highest probability.
 
@@ -54,11 +54,11 @@ N-grams are limited by
 **Loss**: The difference between the target and the actual prediction.
 - a.k.a wrongness
 - high loss=large difference
-- decreasing loss->model is improving
+- decreasing loss $&rarr;$ model is improving
 
 **Preprocessing**: Cleaning & prepping data for model training.
 
-**Fine-tuning**: Adpats a model to a specific task/behavior
+**Fine-tuning**: Adpats a model to a specific task/behavior.
 
 **SFT**: Supervised Fine-Tuning
 
@@ -66,8 +66,6 @@ N-grams are limited by
 - Aligns the AI's behavior with human preferences.
 
 **Test set**: Curated collection of prompts and outputs. Allows the user to automate metrics.
-
-## Training Your SLM (1_5)
 
 ### Padding a dataset
 Create a matrix containing the indices of each token in the dataset.
@@ -78,15 +76,16 @@ Create a matrix containing the indices of each token in the dataset.
         - selecting an arbitrary paragraph length, truncating long ones and padding short ones (most common method).
 
 ### Preparing the input and target datasets
-- Input: contains the context of a sequence
-- Target: contains the last token
-ex. 'Table Mountain is beautiful
+- Input: Contains the context of a sequence.
+- Target: Contains the last token.
+ex. 'Table Mountain is beautiful.'
 - Input: ["Table", "Mountain", "is"] (last token removed).
 - Target: ["Mountain", "is", "beautiful"] (shifted by one token).
 
 ### Shuffle the dataset and specify the batch size
-Batch: chunks of data, in this case, a few paragraphs per batch.
-Shuffling ensures that a diverse group of each data lands in each batch. We don't want one batch to be all about coffee and another batch to be all about gorillas.
+- Batch: chunks of data, in this case, a few paragraphs per batch.
+- Shuffling ensures that a diverse group of each data lands in each batch. 
+We don't want one batch to be all about coffee and another batch to be all about gorillas.
 - The order of tokens w/in the paragraph must remain consistent.
 Processing order:
 1. Create the dataset (tokenize & encode)
@@ -98,14 +97,11 @@ Processing order:
 
 ### Train the SLM
 Our SLM will have around 3.5B parameters
-------
-> **ℹ️ Info: Parameters of a transformer model**
->
-> **Parameters** are a set of numbers that guide the model to perform whatever task it was trained to do. In the case of transformer models, the parameters are less interpretable. They are often a very large collection of numbers that determine the model behavior.
->
-> The parameters of a transformer model are updated after processing each batch of paragraphs. At the start of the training, the parameters are intialized with random numbers.
->Models are then usually trained by processing the data multiple times. Going through the data once is known as an **iteration** or **epoch**. During each training iteration, the parameters are updated so that they lead to better predictions of the next token.
-------
+
+**Parameters**: A set of numbers that guide the model to perform a task. 
+- The parameters for transformer models are less interpretable than those of n-gram models. 
+- They are often a very large collection of numbers that determine the model behavior.
+
 
 ### Initialize the model
 Use create_model() to build a transformer model.
@@ -115,15 +111,15 @@ Use create_model() to build a transformer model.
     - High values are faster, but not as effective
     - Low values are more accurate, but slow
 
-**Callback function**: Prints a sample output on a regular basis during training so loss can be measured.
+**Callback function**: Performs an action at a predetermined interval.
+- Create checkpoints
+- Print output
+- Stop training based on predetermined criteria.
+- Adjust weights
 
 ## Train the Model!
-- **Step**: The training process updates the model parameter after processing each batch. Processing & updating is a single step.
+- **Step**: The training process updates the model parameter after processing each batch. 
+Processing & updating is a single step.
 - **Epoch**: Processing all batches in the dataset. Run multiple epochs to improve accuracy.
 - **Overfitting**: When you run too many epochs and the model starts picking up noise.
-
-### Evaluation
-- A. How good is your model at predicting the next token for a given prompt based on patterns identified in the training dataset?
-- B. Is the generated text coherent, and does it make sense given the context?
-- C. Is the likely next token what you expect to see when the context is changed slightly?
 

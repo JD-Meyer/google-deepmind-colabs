@@ -124,7 +124,7 @@ Choose a vocabulary size large enough to represent common words and meaningful p
 but small enough to generalize to new words and keep the model size manageable.
 
 ## The "tokenizer tax"
-Why you would you want to build your own tokenizer rather than using an existing one, such as the Gemma tokenizer?
+Why you would you want to build a custom tokenizer rather than using an existing one?
 
 Because most pretrained models are overwhelmingly trained on English-centric text. 
 Their tokenizers are highly optimized for English, but inefficient for many other languages, including African languages.
@@ -137,13 +137,12 @@ Ex.
 - A Yoruba tokenizer, on the other hand, will correctly split Oluwaseun into meaningful tokens “Oluwa” (God) and “seun” (thanks).
 
 **Most commercial language model APIs charge per token.**
-In the above example, using the generic tokenizer would be twice as expensive and produce a worse result.
-*Researchers call this the “tokenizer tax."*
+
+**Tokenizer tax**: When using a generic tokenizer would be more expensive and produce a worse result.
 
 Due to design decisions of the tokenizer, users working with less resourced languages tend to pay more for using 
 commercial language models and get worse results compared to users working with English.  
 
-
-By training your own tokenizer on data that is relevant to your task, you can build models that are not only cheaper to run,
-but also more accurate, more efficient, and more equitable for your specific context.
+By training a tokenizer on data relevant to the task, you can build models that are cheaper to run,
+more accurate, more efficient, and more equitable for the specific context.
 

@@ -16,9 +16,9 @@ Documentation provides
 - privacy
 - consent
 - ownership
-- resprersentation
+- representation
 
-    to build
+Builds
 - trust
 - accountability
 - value alignment

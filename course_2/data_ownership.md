@@ -4,7 +4,6 @@
 - How do we ensure communities benefit from its use? 
 - And what does meaningful access and use look like in the age of AI?
 
-
 **Interesting insight**: Ownership is obscured by corporate claims that “publicly accessible” equals “free to exploit.”
 
 ## Privacy, Ownership, & Consent

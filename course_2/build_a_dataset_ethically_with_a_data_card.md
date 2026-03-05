@@ -9,7 +9,7 @@ Critics of our education system complain that students become disinterested beca
 4. Prioritizes metrics over learning
 
 What dataset would I need for my model to work effectively?
-1. Detailed histories of specific geographical regions during specific eras including.
+* Detailed histories of specific geographical regions during specific eras including.
    - Politics
    - Religion
    - Economics
